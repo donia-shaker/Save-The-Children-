@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-UltLt.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-UltLt.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-ThEx.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-ThEx.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-Lt.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-Lt.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-Cn.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-Cn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-Md.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-Md.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('./fonts/HelveticaNeueLTPro-BlkEx.woff2') format('woff2'),
+        url('./fonts/HelveticaNeueLTPro-BlkEx.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hacen Tunisia';
+    src: url('./fonts/HacenTunisia.woff2') format('woff2'),
+        url('./fonts/HacenTunisia.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE SS Two';
+    src: url('./fonts/GESSTwoLight-Light.woff2') format('woff2'),
+        url('./fonts/GESSTwoLight-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GE SS Two';
+    src: url('./fonts/GESSTwoBold-Bold.woff2') format('woff2'),
+        url('./fonts/GESSTwoBold-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GE SS Two';
+    src: url('./fonts/GESSTwoMedium-Medium.woff2') format('woff2'),
+        url('./fonts/GESSTwoMedium-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

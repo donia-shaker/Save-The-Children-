@@ -1,0 +1,276 @@
+@use "./../component/header" as *;
+@use "./../helper/mixin" as *;
+@use "./../helper/variable" as *;
+@use "./../component/btn" as *;
+@use "./../component/animation" as *;
+@use "./../component/shadow" as *;
+
+/* start Container */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container {
+    @include breakpoints(mobile) {
+        max-width: 100%;
+    }
+    @include breakpoints(small) {
+        max-width: 750px;
+        // width: 100%;
+    }
+    @include breakpoints(medium) {
+        max-width: 970px;
+    }
+    @include breakpoints(large) {
+        // width: 970px;
+        max-width: 1120px;
+    }
+    @include breakpoints(x-large) {
+        // width: 970px;
+        max-width: 1300px;
+    }
+}
+// End Container
+
+// Start Hero Section
+main {
+    position: relative;
+    background-image: url("/images/bg-story.png");
+    background-color: $primary-color;
+    background-size: cover;
+    height: 120vh;
+    color: $white-color;
+    padding-right: 12vw;
+    @include breakpoints(large) {
+        padding-right: 0;
+    }
+    @include breakpoints(small) {
+        background-size: cover;
+        height: 110vh;
+    }
+    .overlay {
+        position: absolute;
+        background-image: linear-gradient(
+            to bottom,
+            rgb(34 0 101 / 86%),
+            rgb(21 3 38 / 25%)
+        );
+        width: 100%;
+        height: 100%;
+        right: 0;
+    }
+    .text {
+        position: relative;
+        top: 260px;
+        font-size: 14px;
+    }
+}
+// End Hero Section
+
+// Start companies Section
+section.companies {
+    margin-bottom: -300px;
+    position: relative;
+    .image.layer2 {
+        position: absolute;
+        top: 400px;
+        left: 0px;
+        height: 450px;
+        overflow: hidden;
+        width: 126px;
+        @include breakpoints(large) {
+            display: none;
+        }
+        img {
+            height: 460px;
+        }
+    }
+
+    .image.layer3 {
+        position: absolute;
+        top: 50px;
+        right: -83px;
+        height: 430px;
+        overflow: hidden;
+        width: 160px;
+        @include breakpoints(small) {
+            display: none;
+        }
+        img {
+            height: 500px;
+        }
+    }
+    .main {
+        background-color: $white-color;
+        position: relative;
+        top: -40vh;
+        z-index: 2;
+        padding: 80px 20px 10px;
+        overflow-y: clip;
+        .image.layer1 {
+            position: absolute;
+            top: -160px;
+            left: 0px;
+            height: 400px;
+            overflow: hidden;
+            width: 120px;
+            @include breakpoints(small) {
+                display: none;
+            }
+            img {
+                height: 400px;
+            }
+        }
+        h2 {
+            color: #666;
+            font-weight: 600;
+            position: relative;
+            margin: 0 100px 40px;
+            &::before {
+                content: "";
+                width: 80px;
+                height: 2px;
+                position: absolute;
+                background-color: #666;
+                top: 50%;
+                right: -90px;
+            }
+        }
+        .content {
+            padding: 20px 0;
+            border: 1px solid #eee;
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: 120px;
+            }
+            @include breakpoints(mobile) {
+                text-align: center;
+            }
+            span {
+                position: absolute;
+                font-size: 130px;
+                color: #e0eaf8;
+                font-family: "Hacen Tunisia";
+                top: -70px;
+                left: 0;
+            }
+            .box {
+                display: flex;
+                padding: 10px 0;
+                margin: 20px;
+                @include breakpoints(mobile) {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0;
+                }
+                .title {
+                    h3 {
+                        font-size: 30px;
+                        font-weight: 600;
+                        color: #555;
+                        width: 200px;
+                        padding: 40px;
+                        margin-left: 60px;
+                        @include breakpoints(mobile) {
+                            width: 100%;
+                            margin: auto;
+                        }
+                    }
+                }
+                .image {
+                    padding: 25px;
+                    border: 1px solid #eee;
+                    border-radius: 30px;
+                    height: fit-content;
+                    width: fit-content;
+                    margin-right: 20px;
+                    padding: 20px;
+                    margin-left: 60px;
+                    @include breakpoints(mobile) {
+                        margin: auto;
+                        margin-bottom: 40px;
+                    }
+                    img {
+                        width: 150px;
+                        height: 100px;
+                        @include breakpoints(mobile) {
+                            width: 100px;
+                        }
+                    }
+                }
+                .text {
+                    h3 {
+                        color: #555;
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        font-size: 14px;
+                        color: #555;
+                        line-height: 2.4;
+                        padding-left: 65px;
+                        @include breakpoints(small) {
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+                .all-bank {
+                    .country {
+                        &:not(:last-child) {
+                            margin-bottom: 100px;
+                        }
+                        h3 {
+                            color: #555;
+                            font-size: 24px;
+                            margin-bottom: 30px;
+                        }
+                        .images {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                        .image {
+                            margin-left: 20px;
+                            @include breakpoints(mobile) {
+                                margin: 0;
+                                margin-bottom: 40px;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+                a {
+                    color: #555;
+                    font-size: 12px;
+                    margin-top: 10px;
+                    border-bottom: 1px solid #555;
+                }
+            }
+        }
+    }
+}
+
+// Start Share Section
+section.share {
+    padding: 40px 0;
+    margin-top: -80px;
+    @include flex(center, column, nowrap, center);
+    h2 {
+        font-size: 30px;
+        margin-bottom: -30px;
+    }
+    ul {
+        padding-top: 40px;
+        width: 260px;
+        font-size: 26px;
+        @include flex(space-between, row, nowrap, center);
+        li {
+            color: #aaa;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+// End Share Section

@@ -1,0 +1,629 @@
+@use "./../component/header" as *;
+@use "./../helper/mixin" as *;
+@use "./../helper/variable" as *;
+@use "./../component/btn" as *;
+@use "./../component/animation" as *;
+@use "./../component/shadow" as *;
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* start Container */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container {
+    @include breakpoints(mobile) {
+        max-width: 100%;
+    }
+    @include breakpoints(small) {
+        max-width: 750px;
+        // width: 100%;
+    }
+    @include breakpoints(medium) {
+        max-width: 970px;
+    }
+    @include breakpoints(large) {
+        // width: 970px;
+        max-width: 1120px;
+    }
+    @include breakpoints(x-large) {
+        // width: 970px;
+        max-width: 1300px;
+    }
+}
+/* End Container */
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+// End Header Section
+
+// Start Hero Section
+main {
+    position: relative;
+    background-image: url("/images/2.jpg");
+    background-size: cover;
+    height: 130vh;
+    color: $white-color;
+    &[dir="rtl"] {
+        transform: rotateY(180deg);
+    }
+    top: -70px;
+    @include breakpoints(small) {
+        background-size: cover;
+        height: 110vh;
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        box-shadow: 21px 0 80px 120vh hwb(0deg 0% 100% / 31%);
+        z-index: 2;
+    }
+    .container {
+        height: 100%;
+        position: relative;
+    }
+    .text {
+        color: rgb(251 251 251 / 95%);
+        z-index: 3;
+        position: absolute;
+        &[dir="rtl"] {
+            transform: rotateY(180deg);
+        }
+        top: 50%;
+        left: 15px;
+        text-align: start;
+        text-shadow: 0 1px 5px #555;
+        @include breakpoints(small) {
+            top: 40%;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            @include breakpoints(small) {
+                font-size: 36px;
+                text-align: center;
+            }
+        }
+        p {
+            font-size: 30px;
+            font-family: "GE SS Two";
+            font-weight: 300;
+            @include breakpoints(small) {
+                font-size: 24px;
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+// End Hero Section
+
+// start list Section
+.list {
+    position: relative;
+    top: 0px;
+    margin: 20px 0;
+    .container {
+        padding: 10px;
+        background-color: $white-color;
+        top: -200px;
+        position: relative;
+        @include flex(space-between, row, wrap, center);
+        @include breakpoints(small) {
+            @include flex(center, row, wrap, center);
+        }
+        .box {
+            padding: 15px 25px;
+            width: 280px;
+            margin: 20px;
+            border: 1px solid $border-color;
+            transition: 0.5s ease-in-out;
+            @include flex(center, column, wrap, center);
+            i{
+                color: $main-color;
+                font-size: 40px;
+                padding: 20px;
+            }
+            p{
+                font-size: 16px;
+                padding: 20px;
+                color: black;
+            }
+            &:hover{
+                background-color: $main-color;
+                i{
+                    color: $white-color;
+                }
+                p{
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+// End list Section
+
+// Start Services Section
+.services {
+    position: relative;
+    top: -80px;
+    margin-bottom: 180px;
+    .container {
+        position: relative;
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            @include breakpoints(mobile) {
+                margin-bottom: 20px;
+            }
+        }
+        ul {
+            padding: 20px 0;
+            margin: 0 80px;
+            font-size: 14px;
+            @include breakpoints(mobile) {
+                margin: 10px;
+                font-size: 2.3vw;
+            }
+            @include flex(space-between, row, wrap, center);
+            .ServicesDot {
+                color: $span-color;
+                cursor: pointer;
+                position: relative;
+            }
+            .active.ServicesDot {
+                color: $main-color;
+                &::after {
+                    content: "";
+                    width: 2px;
+                    position: absolute;
+                    height: 25px;
+                    background-color: $main-color;
+                    background-size: cover;
+                    left: 50%;
+                    margin-top: 25px;
+                    animation: active-list 0.5s forwards;
+                    @include breakpoints(mobile) {
+                        margin-top: 15px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .service {
+        margin: 80px 0;
+        height: 340px;
+        .slider {
+            width: 100%;
+            .slider-wrapper {
+                display: flex;
+                position: relative;
+                height: 440px;
+                top: -50px;
+                margin: 0 80px;
+                overflow: hidden;
+                @include breakpoints(mobile) {
+                    margin: auto;
+                    width: 95%;
+                }
+                .box {
+                    position: absolute;
+                    background-color: $white-color;
+                    height: 440px;
+                    border: 1px solid #eee;
+                    width: 100%;
+                    transform: translateX(-100%);
+                    transition: 0.5s ease-in-out;
+                    &.active {
+                        transform: translateX(0);
+                        z-index: 2;
+                    }
+
+                    @include flex(flex-start, row, wrap, revert);
+                    .content {
+                        @include flex(space-between, column, wrap, flex-start);
+                        max-width: 600px;
+                        padding: 40px;
+                        color: $paragraph-color;
+                        @include breakpoints(large) {
+                            width: 65%;
+                        }
+                        @include breakpoints(mobile) {
+                            width: 100%;
+                            padding: 20px;
+                        }
+
+                        h3 {
+                            color: $primary-color;
+                            padding: 40px 0;
+                        }
+                        p {
+                            margin-bottom: 40px;
+                            height: 160px;
+                        }
+                        button {
+                            padding: 15px 50px;
+                        }
+                    }
+                        img {
+                            position: absolute;
+                        height: 100%;
+                        width: 330px;
+                        left: 0;
+                        top: 0;
+                        overflow: hidden;
+                        @include breakpoints(small) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .design {
+        img {
+            &:first-child {
+                position: absolute;
+                left: 10px;
+                height: 70px;
+                bottom: -90px;
+            }
+        }
+    }
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -100px;
+        color: $main-color;
+        font-size: 40px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        @include breakpoints(mobile) {
+            padding: 5px;
+            right: 2px;
+            font-size: 30px;
+        }
+    }
+    .next {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+        @include breakpoints(mobile) {
+            right: 95%;
+        }
+    }
+}
+// End Services Section
+
+// Start App Section
+.help {
+    direction: rtl;
+    background-color: $background-color;
+    // overflow-x: hidden;
+    border-radius: 0px 0px 20%;
+    #wave {
+        position: relative;
+        height: 70px;
+        margin-bottom: 100px;
+        margin-top: -70px;
+        background: $white-color;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 130% 100%;
+            width: 105%;
+            height: 70px;
+            background-color: $white-color;
+            left: 0;
+            top: 27px;
+        }
+    }
+    .overflow {
+        overflow-x: clip;
+        width: 100%;
+        height: 100%;
+    }
+    .container {
+        @include flex(space-between, row, nowrap, center);
+        .image {
+            width: 90%;
+            @include breakpoints(large) {
+                width: 85%;
+            }
+            @include breakpoints(small) {
+                display: none;
+            }
+            img {
+                width: 85%;
+                @include breakpoints(large) {
+                    width: 100%;
+                }
+            }
+        }
+        .content {
+            padding: 40px;
+            padding-bottom: 0;
+            position: relative;
+            @include breakpoints(small) {
+                padding: 0px 80px;
+                text-align: center;
+            }
+            @include breakpoints(mobile) {
+                padding: 0px 0 0 10px;
+                text-align: center;
+            }
+            .boxes {
+                position: relative;
+                height: 440px;
+                @include breakpoints(small) {
+                    margin-right: 5%;
+                }
+                @include breakpoints(mobile) {
+                    margin-right: 0;
+                }
+                .box {
+                    background-color: #fff1dd;
+                    border-radius: 20px;
+                    text-align: center;
+                    width: 600px;
+                    padding: 20px 20px 80px 10px;
+                    margin: 60px 0;
+                    margin-left: 20px;
+                    position: absolute;
+                    transition: right 2s ease;
+                    &.main-position {
+                        right: 0;
+                        padding: 20px 20px 80px 10px;
+                        z-index: 2;
+                        margin-right: "";
+                    }
+                    &.seconed-position {
+                        right: calc(34vw + 100px);
+                        padding: 20px;
+                        left: 40px;
+                        z-index: 1;
+                        width: 100%;
+                        margin-right: 25px;
+                        @include breakpoints(large) {
+                            right: calc(43vw + 50px);
+                        }
+                        @include breakpoints(small) {
+                            right: calc(55vw + 50px);
+                        }
+                        @include breakpoints(mobile) {
+                            right: calc(82vw + 6px);
+                        }
+                    }
+                    @include breakpoints(large) {
+                        width: 45vw;
+                    }
+                    @include breakpoints(small) {
+                        // max-width: 65%;
+                        width: 85vw;
+                    }
+                    @include breakpoints(mobile) {
+                        max-width: 90%;
+                        padding-bottom: 40px;
+                    }
+                    h3 {
+                        margin: 20px 10px;
+                        font-size: 24px;
+                        color: #444;
+                    }
+                    p{
+                        padding: 20px;
+                    }
+                    .button{
+                        margin: 20px;
+                    }
+                }
+            }
+        }
+        .mySlides {
+        }
+        .dot {
+            cursor: pointer;
+            height: 8px;
+            width: 25px;
+            margin: 30px 2px 0;
+            background-color: #bbb;
+            border-radius: 30px;
+            display: inline-block;
+            transition: background-color 0.6s ease-in-out;
+        }
+
+        .active {
+            transition: background-color 0.6s ease-in-out;
+            background-color: $main-color;
+            width: 140px;
+        }
+    }
+    #wave-two {
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 190% 59%;
+            width: 114vw;
+            height: 22vw;
+            background-color: $background-color;
+            left: 0;
+            bottom: -60px;
+            z-index: -1;
+            @include breakpoints(small) {
+                width: 160vw;
+                height: 28vw;
+            }
+            @include breakpoints(mobile) {
+                width: 146vw;
+                height: 50vw;
+            }
+        }
+    }
+}
+// End App Section
+
+// Start Number Secttion
+.number {
+    background-color: $primary-color;
+    padding: 20px 0 60px;
+    color: $white-color;
+    position: relative;
+    h2 {
+        color: $orange-color;
+        padding: 60px 0;
+    }
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 80px;
+        position: relative;
+        z-index: 2;
+        padding: 0 40px;
+        @include breakpoints(large) {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 0 10px;
+        }
+        @include breakpoints(mobile) {
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        }
+        .box {
+            text-align: center;
+            padding: 20px;
+            height: fit-content;
+            border-bottom: 4px solid #eee;
+            span {
+                color: $white-color;
+                padding: 20px 10px;
+                font-size: 65px;
+                @include breakpoints(large) {
+                    font-size: 28px;
+                }
+            }
+            p {
+                width: 80%;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.4;
+                @include breakpoints(small) {
+                    font-size: 12px;
+                }
+            }
+            a:hover {
+                cursor: pointer;
+                &::before {
+                    content: attr(data-content);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    font-family: "Hacen Tunisia";
+                    font-size: 36vw;
+                    right: -65px;
+                    top: -30px;
+                    color: #41414140;
+                    z-index: -1;
+                    @include flex(center, row, nowrap, center);
+                    @include breakpoints(mobile) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Number Secttion
+
+// Start Location Section
+.location {
+    padding-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    .layer1 {
+        position: absolute;
+        right: -50px;
+        top: 100px;
+        z-index: -3;
+        img {
+            width: 9vw;
+        }
+    }
+    .container {
+        @include flex(space-between, row, nowrap, center);
+        @include breakpoints(mobile) {
+            @include flex(center, column-reverse, nowrap, center);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 60px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        img {
+            width: 51vw;
+            @include breakpoints(mobile) {
+                width: 100%;
+            }
+        }
+        .content {
+            margin-top: 160px;
+            @include breakpoints(mobile) {
+                margin-top: 0px;
+            }
+            .boxes {
+                text-align: center;
+                width: 360px;
+                margin-right: -30px;
+                @include flex(space-between, row, nowrap, center);
+
+                .box {
+                    color: $primary-color;
+                    font-weight: 600;
+                    font-size: 20px;
+                    width: calc(100% / 3);
+                    &:not(:last-of-type) span {
+                        padding: 0 45px 10px;
+                        border-left: 2px solid $primary-color;
+                    }
+                    span {
+                        font-family: "Hacen Tunisia";
+                    }
+                    p {
+                        padding: 20px 0;
+                        font-weight: normal;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .button {
+        margin: 60px 0;
+    }
+    .layer2 {
+        position: absolute;
+        left: -20px;
+        bottom: 0px;
+        z-index: -3;
+        img {
+            width: 4vw;
+        }
+    }
+}
+// End Location Section

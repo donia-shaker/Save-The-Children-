@@ -1,0 +1,232 @@
+@use "./../component/header" as *;
+@use "./../helper/mixin" as *;
+@use "./../helper/variable" as *;
+@use "./../component/btn" as *;
+@use "./../component/animation" as *;
+@use "./../component/shadow" as *;
+
+/* start Container */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container {
+    @include breakpoints(mobile) {
+        max-width: 100%;
+    }
+    @include breakpoints(small) {
+        max-width: 750px;
+        // width: 100%;
+    }
+    @include breakpoints(medium) {
+        max-width: 970px;
+    }
+    @include breakpoints(large) {
+        // width: 970px;
+        max-width: 1120px;
+    }
+    @include breakpoints(x-large) {
+        // width: 970px;
+        max-width: 1300px;
+    }
+}
+// End Container
+
+// Start Hero Section
+main {
+    position: relative;
+    background-size: cover;
+    height: 86vh;
+    padding-right: 12vw;
+    .background {
+        display: flex;
+        margin-right: -315px;
+        height: 86vh;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+        .col {
+            display: flex;
+            flex-direction: column;
+            .one {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                animation: ticker-kf 30s linear infinite;
+                img {
+                    width: 325px;
+                    margin: 20px;
+                }
+            }
+            &.reverse {
+                .one {
+                    animation-direction: reverse;
+                }
+            }
+        }
+    }
+    @include breakpoints(large) {
+        padding-right: 0;
+    }
+    .overlay {
+        position: absolute;
+        background-image: linear-gradient(
+            to bottom,
+            rgb(0 0 0 / 60%),
+            rgb(21 3 38 / 25%)
+        );
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        right: 0;
+    }
+    .text {
+        position: absolute;
+        top: 260px;
+        font-size: 14px;
+        z-index: 7;
+        color: $white-color;
+    }
+}
+// End Hero Section
+
+section.managers {
+    margin-bottom: -200px;
+    position: relative;
+    .image.layer2 {
+        position: absolute;
+        top: 400px;
+        left: 0px;
+        height: 450px;
+        overflow: hidden;
+        width: 126px;
+        @include breakpoints(large) {
+            display: none;
+        }
+        img {
+            height: 460px;
+        }
+    }
+
+    .image.layer3 {
+        position: absolute;
+        top: 900px;
+        left: 20px;
+        height: 430px;
+        overflow: hidden;
+        width: 160px;
+        @include breakpoints(small) {
+            display: none;
+        }
+        img {
+            height: 500px;
+        }
+    }
+    .main {
+        background-color: $white-color;
+        position: relative;
+        top: -30vh;
+        z-index: 2;
+        padding: 80px 120px 10px;
+        overflow-y: clip;
+        @include breakpoints(small) {
+            padding: 80px 15px 10px;
+        }
+        .image.layer1 {
+            position: absolute;
+            top: -160px;
+            left: 0px;
+            height: 400px;
+            overflow: hidden;
+            width: 120px;
+            @include breakpoints(small) {
+                display: none;
+            }
+            img {
+                height: 400px;
+            }
+        }
+        h2 {
+            color: #444;
+            font-weight: 600;
+            position: relative;
+        @include breakpoints(small) {
+            margin-right: 80px;
+        }
+            &.title::before {
+                content: "";
+                width: 80px;
+                height: 2px;
+                position: absolute;
+                background-color: #666;
+                top: 50%;
+                right: -90px;
+            }
+        }
+        p.description {
+            color: #555;
+            font-size: 23px;
+            width: 50%;
+            line-height: 1.6;
+            font-weight: 200;
+        @include breakpoints(small) {
+            width: 100%;
+        }
+        }
+    }
+    .boxes {
+        margin: 60px 0;
+        h2{
+            padding-bottom: 40px;
+        }
+        .all-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 60px 30px;
+            
+            .content {
+                img {
+                    width: 100%;
+                }
+                h3 {
+                    padding: 15px 0;
+                    font-size: 22px;
+                    color: #555;
+                    font-weight: 400;
+                }
+                p {
+                    color: #666;
+                    font-size: 22px;
+                    font-weight: 100;
+                    padding: 15px 0;
+                }
+            }
+        }
+    }
+}
+
+// Start Share Section
+section.share {
+    margin-top: -20px;
+margin-bottom: 40px;
+    @include flex(center, column, nowrap, center);
+    h2 {
+        font-size: 30px;
+        margin-bottom: -30px;
+    }
+    ul {
+        padding-top: 40px;
+        width: 260px;
+        font-size: 26px;
+        @include flex(space-between, row, nowrap, center);
+        li {
+            color: #aaa;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+// End Share Section

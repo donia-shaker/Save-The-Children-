@@ -1,0 +1,49 @@
+@use "./../helper/variable" as *;
+@use "./../helper/mixin" as *;
+
+.h-1{
+    
+    font-size: 57px;
+    font-family: 'Hacen Tunisia';
+    font-weight: 200;
+    @include breakpoints(small) {
+        font-size: 36px;
+    }
+}
+.h-2{
+    padding: 26px 0;
+    font-size: 46px;
+    font-family: 'Hacen Tunisia';
+    color: $primary-color ;
+    font-weight: 400;
+    @include breakpoints(small) {
+        font-size: 30px;
+    }
+}
+.h-3{
+    font-size: 30px;
+    @include breakpoints(small) {
+        font-size: 20px;
+    }
+}
+
+.f-4{
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    @include breakpoints(mobile) {
+        font-size: 12px;
+    }
+}
+
+.f-5{
+    font-size: 22px;
+    @include breakpoints(small) {
+        font-size: 20px;
+    }
+}
+
+.f-16pt{
+    font-size: 16pt;
+    line-height: 1.8;
+}

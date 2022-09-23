@@ -1,0 +1,43 @@
+@media (min-width: 576px){
+.modal-dialog.map{
+    max-width: 60rem !important; 
+    margin: 1.75rem auto;
+}
+}
+
+button.color{
+     background-color: #8170a4;
+     color: white;
+}
+.btn:hover{
+    color: white !important;
+}
+
+.bg_color{
+    background-color: rgb(45 37 63) !important;
+    color: white;
+
+}
+
+.color_text{
+    color: #c4acf2;
+    font-weight: 600;
+}
+.message_animation{
+    position: absolute;
+    z-index: 1;
+    animation: message 5s ease-in-out forwards;
+}
+
+@keyframes message {
+    0%{
+opacity: 100%;
+
+    }
+    50%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 0;
+    }
+}

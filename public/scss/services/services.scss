@@ -1,0 +1,424 @@
+@use "./../component/header" as *;
+@use "./../helper/mixin" as *;
+@use "./../helper/variable" as *;
+@use "./../component/btn" as *;
+@use "./../component/animation" as *;
+@use "./../component/shadow" as *;
+/* start Container */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container {
+    @include breakpoints(mobile) {
+        max-width: 100%;
+    }
+    @include breakpoints(small) {
+        max-width: 750px;
+        // width: 100%;
+    }
+    @include breakpoints(medium) {
+        max-width: 970px;
+    }
+    @include breakpoints(large) {
+        // width: 970px;
+        max-width: 1120px;
+    }
+    @include breakpoints(x-large) {
+        // width: 970px;
+        max-width: 1300px;
+    }
+}
+// End Container
+
+// Start Hero Section
+main {
+    position: relative;
+    background-size: cover;
+    height: 110vh;
+    color: $white-color;
+    padding-right: 12vw;
+    @include breakpoints(large) {
+        padding-right: 0;
+    }
+    @include breakpoints(small) {
+        background-size: cover;
+        height: 110vh;
+    }
+    .overlay {
+        position: absolute;
+        background-image: linear-gradient(
+            to bottom,
+            rgb(0 0 0 / 60%),
+            rgb(21 3 38 / 25%)
+        );
+        width: 100%;
+        height: 100%;
+        right: 0;
+    }
+    .container {
+        height: 105%;
+        overflow: hidden;
+        position: relative;
+        @include flex(space-between, row, nowrap, center);
+    }
+    .text {
+        padding-left: 40px;
+        width: 50%;
+        text-align: start;
+        position: absolute;
+        z-index: 4;
+        @include breakpoints(medium) {
+            top: 200px;
+            right: 30px;
+            width: 60%;
+        }
+        @include breakpoints(mobile) {
+            width: 100%;
+            top: 160px;
+        }
+        h1 {
+            font-size: 50px;
+            line-height: 0.5;
+            @include breakpoints(small) {
+                font-size: 36px;
+                text-align: start;
+                text-shadow: 0 1px 5px #555;
+            }
+        }
+        p {
+            font-family: "GE SS Two";
+            font-weight: 200;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            @include breakpoints(small) {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            .number {
+                font-family: "Helvetica Neue LT Pro";
+                font-weight: 500;
+                color: $orange-color;
+            }
+        }
+    }
+}
+// End Hero Section
+
+// Start Adventage Section
+.adventages {
+    position: relative;
+    .container {
+        .main-adv {
+            @include flex(space-between, row, nowrap, center);
+            background-color: $white-color;
+            position: relative;
+            top: -30vh;
+            @include breakpoints(large) {
+                top: -28vh;
+            }
+            @include breakpoints(small) {
+                @include flex(center, column, wrap, center);
+                text-align: center;
+            }
+            padding: 40px 40px 0;
+            z-index: 6;
+            .box {
+                padding: 20px 60px;
+                @include breakpoints(small) {
+                    @include flex(center, column, wrap, center);
+                }
+                .image {
+                    position: relative;
+                }
+                img.two {
+                    position: absolute;
+                    right: 2px;
+                }
+                span {
+                    font-family: "Helvetica Neue LT Pro";
+                    position: absolute;
+                    top: 0%;
+                    color: white;
+                    right: 24px;
+                    font-size: 74px;
+                    font-weight: 400;
+                }
+                h2 {
+                    font-size: 26px;
+                    font-weight: 600;
+                }
+                p {
+                    font-size: 14px;
+                    color: #555;
+                    line-height: 1.9;
+                }
+            }
+        }
+        .slider-list {
+            width: 70%;
+            margin: 100px auto;
+            margin-top: -190px;
+            @include breakpoints(small) {
+                width: 100%;
+            }
+            ul {
+                padding: 20px 0;
+                margin: 0 80px;
+                font-size: 14px;
+                @include breakpoints(mobile) {
+                    margin: 10px;
+                    font-size: 2.3vw;
+                }
+                @include flex(space-between, row, wrap, center);
+                .dot {
+                    font-weight: 600;
+                    // font-size: 16px;
+                    color: #eee;
+                    cursor: pointer;
+                    position: relative;
+                    padding: 10px;
+                }
+                .active.dot {
+                    color: $main-color;
+                    border-bottom: 2px solid $main-color;
+                }
+            }
+        }
+        .box {
+            margin-bottom: 80px;
+            .content {
+                padding: 0 40px;
+                @include flex(space-between, row, wrap, flex-start);
+                @include breakpoints(small) {
+                    padding: 0;
+                    @include flex(center, row, wrap, flex-start);
+                }
+                .image {
+                    margin-right: 40px;
+                    img {
+                        width: 400px;
+                        height: 450px;
+                        @include breakpoints(small) {
+                            width: 100%;
+                            align-items: center;
+                        }
+                    }
+                    @include breakpoints(large) {
+                        margin-right: 0px;
+                    }
+                }
+                .text {
+                    width: 50%;
+                    @include breakpoints(small) {
+                        width: 100%;
+                        text-align: center;
+                    }
+                    h2 {
+                        padding-top: 10px;
+                        font-size: 40px;
+                    }
+                    p {
+                        font-size: 14px;
+                        line-height: 2.3;
+                        min-height: 280px;
+                        @include breakpoints(small) {
+                            padding: 0 20px;
+                        }
+                        @include breakpoints(mobile) {
+                            padding: 0;
+                        }
+                    }
+                    .link {
+                        margin: 40px 0 0;
+                        a {
+                            color: $main-color;
+                            cursor: pointer;
+                            border-bottom: 2px solid $main-color;
+                        }
+                    }
+                }
+            }
+            &.fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+        }
+    }
+}
+// End Adventage Section
+
+// Start Text Section
+section.text {
+    background-color: $background-color;
+    padding: 60px 0;
+    color: $primary-color;
+    line-height: 2;
+    font-weight: bold;
+    p {
+        font-size: 40px;
+        @include breakpoints(small) {
+            font-size: 4vw;
+        }
+        &:last-child {
+            text-align: end;
+        }
+        span {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: $orange-color;
+        }
+    }
+}
+// End Text Section
+
+// Start Success Section
+section.success {
+    padding-bottom: 50px;
+    .container {
+        h2 {
+            padding: 80px 0;
+        }
+        .slider-wrapper {
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+            background-image: url("/images/success.png");
+            z-index: 2;
+            background-size: cover;
+            border-bottom: 10px solid transparent;
+            border-image: linear-gradient(
+                to left,
+                $span-color 0% 65%,
+                #fff 65%
+            );
+            border-image-slice: 1;
+            color: $white-color;
+            .box {
+                background-image: linear-gradient(
+                    to left,
+                    rgb(0 0 0 / 60%),
+                    #ffffff41
+                );
+                width: 100%;
+                height: 630px;
+                display: none;
+                &.fade {
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                }
+            }
+            .image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: -1;
+                img {
+                    width: 100%;
+                    height: 500px;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .text {
+                position: absolute;
+                top: 0;
+                width: 50%;
+                padding: 40px 80px;
+                @include breakpoints(large) {
+                    width: 70%;
+                }
+                @include breakpoints(mobile) {
+                    width: 100%;
+                    padding: 40px 10px;
+                }
+                h3 {
+                    padding: 40px 0 20px;
+                }
+                p {
+                    line-height: 2;
+                    margin-bottom: 20px;
+                    @include breakpoints(mobile) {
+                        font-size: 14px;
+                    }
+                }
+                a {
+                    color: $white-color;
+                    padding: 3px 0;
+                    font-size: 12px;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+        .btn-success {
+            text-align: end;
+            .btn {
+                margin-right: 10px;
+                padding: 5px 15px 0;
+                width: 20px;
+                font-size: 36px;
+            }
+        }
+    }
+}
+// End Success Section
+
+// Start Other Services Section
+section.other {
+    position: relative;
+    overflow-x: hidden;
+    h2 {
+        text-align: center;
+        margin: 140px 0 60px;
+    }
+    .bg {
+        position: absolute;
+        bottom: 320px;
+        img {
+            width: 150%;
+            height: 270px;
+        }
+    }
+    .slides-wrapper {
+        overflow-x: hidden;
+        height: 620px;
+        display: flex;
+        position: relative;
+        transition: 0.5s ease-in-out;
+        .box {
+            display: inline-block;
+            margin-left: 60px;
+            transform: translateX(40%);
+            img {
+                width: 320px;
+                height: 500px;
+            }
+
+            h3 {
+                font-size: 26px;
+                padding: 40px 0;
+            }
+        }
+    }
+    .btn-other {
+        text-align: center;
+        margin-bottom: 60px;
+        .other-btn {
+            cursor: pointer;
+            margin-right: 20px;
+            padding: 5px 15px 0;
+            width: 20px;
+            font-size: 36px;
+            color: $main-color;
+            background-color: $background-color;
+            transition: 0.6s ease;
+        }
+    }
+}
+// End Other Services Section

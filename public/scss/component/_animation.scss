@@ -1,0 +1,63 @@
+@keyframes news {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes active-list {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 25px;
+    }
+}
+
+@keyframes minu {
+    from {
+        height: 0;
+    }
+    to {
+        height: 400px;
+    }
+}
+
+@keyframes active {
+    from {
+        clip-path: circle(6px at 50% 50px);
+    }
+    to {
+        clip-path: circle(130% at 50% 50px);
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ticker-kf {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
+}

@@ -1,0 +1,326 @@
+@use "./../component/header" as *;
+@use "./../helper/mixin" as *;
+@use "./../helper/variable" as *;
+@use "./../component/btn" as *;
+@use "./../component/animation" as *;
+@use "./../component/shadow" as *;
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* start Container */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container {
+    @include breakpoints(mobile) {
+        max-width: 100%;
+    }
+    @include breakpoints(small) {
+        max-width: 750px;
+        // width: 100%;
+    }
+    @include breakpoints(medium) {
+        max-width: 970px;
+    }
+    @include breakpoints(large) {
+        // width: 970px;
+        max-width: 1120px;
+    }
+    @include breakpoints(x-large) {
+        // width: 970px;
+        max-width: 1300px;
+    }
+}
+/* End Container */
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+html[dir=rtl]{
+    $dir : rtl;
+}
+html[dir=ltr]{
+    $dir : ltr;
+}
+body {
+    overflow-x: hidden;
+    &[dir=rtl]{
+        font-family: "GE SS Two";
+    }
+    &[dir=ltr]{
+        font-family: 'Helvetica Neue LT Pro';
+        font-style: normal;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        box-shadow: 0px 0 70px 180px hwb(0deg 0% 100% / 16%);
+        z-index: 2;
+    }
+}
+// Stasrt Header Section
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    color: $white-color;
+    a {
+        font-family: "GE SS Two";
+        font-weight: 200;
+        font-size: 14px;
+    }
+    .content {
+        padding: 40px 0 25px;
+        .minu {
+            display: none;
+            min-width: 40px;
+            top: 0px;
+            position: absolute;
+            span {
+                width: 30px;
+                height: 2px;
+                position: absolute;
+                background-color: white;
+                top: 60px;
+                z-index: 2;
+            }
+            span:last-child {
+                width: 20px;
+                margin-top: 10px;
+            }
+            @include breakpoints(small) {
+                display: block;
+            }
+        }
+        .rotate {
+            left: 50px;
+            span:first-child {
+                transform: rotate3d(1, 1, 1, 60deg);
+            }
+            span:last-child {
+                transform: rotate3d(1, 2, 1, 180deg);
+                width: 32px;
+                top: 45px;
+            }
+        }
+        &,
+        .top,
+        .left-list,
+        .right-list {
+            @include flex(space-between, row, nowrap, center);
+        }
+
+        .left-list .points,
+        .right-list {
+            @include breakpoints(small) {
+                display: none;
+            }
+        }
+        img {
+            width: 160px;
+            @include breakpoints(small) {
+                width: 200px;
+            }
+        }
+        ul {
+            width: 13rem;
+            @include breakpoints(small) {
+                width: fit-content;
+            }
+            a {
+                color: $white-color;
+            }
+            a.lang {
+                font-family: "Helvetica Neue LT Pro";
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+        i {
+            padding: 0 10px;
+        }
+    }
+
+    // Start Nav Section
+    nav {
+        position: relative;
+        ul.main-list {
+            text-transform: capitalize;
+            overflow-y: hidden;
+            @include flex(space-between, row, wrap, center);
+            padding: 0 20px;
+            border: 1px solid $white-color;
+            border-left: 0;
+            border-right: 0;
+            @include breakpoints(small) {
+                @include flex(flex-start, column, wrap, flex-start);
+                display: none;
+                border: none;
+                background-color: $primary-color;
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                top: -112px;
+                padding-top: 100px;
+                right: -15px;
+                &.responsive {
+                    display: flex;
+                }
+            }
+            li {
+                // position: relative;
+                padding: 15px 0;
+                .info {
+                    transition: all 1s;
+                    background-color: white;
+                    position: absolute;
+                    top: 52px;
+                    width: 100%;
+                    height: 60vh;
+                    right: 0;
+                    padding: 60px 80px 60px 20px;
+                    background-image: url("/images/Al-_Kurimi_3\ f4.png");
+                    background-size: cover;
+                    @include flex(flex-start, row, wrap, flex-start);
+                    display: none;
+                    h2 {
+                        width: 300px;
+                    }
+                    .list {
+                        width: 300px;
+                        h3 {
+                            color: $seconed-color;
+                            font-weight: 200;
+                            padding: 40px 0 20px;
+                            font-size: 18px;
+                        }
+                        li {
+                            padding: 20px 15px;
+                            color: $seconed-color;
+                            a {
+                                color: #333;
+                                text-shadow: none;
+                            }
+                        }
+                    }
+                }
+                a {
+                    position: relative;
+                    color: $white-color;
+                    text-shadow: 0 1px 5px #111;
+                    &:hover {
+                        &::after {
+                            content: "";
+                            width: 2px;
+                            position: absolute;
+                            height: 5px;
+                            background-color: $white-color;
+                            left: 50%;
+                            margin-top: 18px;
+                            animation: active-list 0.5s forwards;
+                            @include breakpoints(small) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .info {
+                        display: flex;
+                        // height: 60vh;
+                        // animation: minu 0.5s forwards 0.5s;
+                        @include breakpoints(small) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // End Nav Section
+}
+// End Header Section
+
+// Start Footer
+footer {
+    background-color: $primary-color;
+    position: relative;
+    overflow: hidden;
+    .layer1 {
+        position: absolute;
+        right: -200px;
+        top: -90px;
+        img {
+            width: 36vw;
+        }
+    }
+    .image {
+        width: 90%;
+        margin: auto;
+        padding: 40px 0;
+        border-bottom: 1px solid #bbb;
+        @include flex(flex-start, column, nowrap, center);
+        img {
+            @include breakpoints(small) {
+                width: 200px;
+            }
+        }
+    }
+    .container {
+        @include flex(flex-start, column, nowrap, center);
+        ul.main {
+            padding: 60px 0;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+            gap: 65px;
+            line-height: 1.3;
+            @include breakpoints(small) {
+                gap: 40px;
+            }
+            li.first {
+                color: $white-color;
+                li a {
+                    color: #c2c1c1;
+                    font-weight: 100;
+                    font-size: 14px;
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+        .copy-right {
+            color: $white-color;
+            margin: 60px 0 40px;
+            font-size: 12px;
+            letter-spacing: 1.4;
+            span {
+                font-family: "Helvetica Neue LT Pro";
+            }
+        }
+    }
+    .layer2 {
+        position: absolute;
+        top: 200px;
+        left: -150px;
+        img {
+            transform: rotateY(180deg);
+            width: 36vw;
+        }
+    }
+}
+// End Footer
