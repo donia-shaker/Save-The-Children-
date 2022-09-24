@@ -111,11 +111,11 @@
             </li>
             <li class="first">شركائنا
                 <ul>
-                    <li><a href="{{ route('companies') }}">موني جرام</a></li>
-                    <li><a href="{{ route('companies') }}">ماستر كارد</a></li>
-                    <li><a href="{{ route('companies') }}">البنوك المراسلة</a></li>
-                    <li><a href="{{ route('companies') }}">منظمة التمويل الدولية </a></li>
-                    <li><a href="{{ route('companies') }}"> تيمينوس </a></li>
+                    <li><a>موني جرام</a></li>
+                    <li><a>ماستر كارد</a></li>
+                    <li><a>البنوك المراسلة</a></li>
+                    <li><a>منظمة التمويل الدولية </a></li>
+                    <li><a> تيمينوس </a></li>
 
                 </ul>
             </li>
