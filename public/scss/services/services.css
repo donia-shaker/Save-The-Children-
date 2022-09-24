@@ -541,7 +541,7 @@ main .text p .number {
 }
 
 section.text {
-  background-color: #fff7ec;
+  background-color: #f8f6f6;
   padding: 60px 0;
   color: #1c1c1c;
   line-height: 2;
@@ -703,6 +703,6 @@ section.other .btn-other .other-btn {
   width: 20px;
   font-size: 36px;
   color: #fd580b;
-  background-color: #fff7ec;
+  background-color: #f8f6f6;
   transition: 0.6s ease;
 }/*# sourceMappingURL=services.css.map */

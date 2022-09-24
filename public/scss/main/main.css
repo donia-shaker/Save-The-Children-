@@ -595,7 +595,7 @@ main .text p {
 
 .help {
   direction: rtl;
-  background-color: #fff7ec;
+  background-color: #f8f6f6;
   border-radius: 0px 0px 20%;
 }
 .help #wave {
@@ -681,7 +681,7 @@ main .text p {
   }
 }
 .help .container .content .boxes .box {
-  background-color: #fff1dd;
+  background-color: #eee;
   border-radius: 20px;
   text-align: center;
   width: 600px;
@@ -772,7 +772,7 @@ main .text p {
   border-radius: 190% 59%;
   width: 114vw;
   height: 22vw;
-  background-color: #fff7ec;
+  background-color: #f8f6f6;
   left: 0;
   bottom: -60px;
   z-index: -1;
