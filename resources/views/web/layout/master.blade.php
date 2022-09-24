@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kuraimi Bank</title>
+    <title>Save The Childern</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" />
     <!-- CSS Normalized -->
@@ -105,7 +105,7 @@
                     <li><a href="{{ route('about_us') }}">القيم والمبادئ</a></li>
                     <li><a href="{{ route('about_us') }}">بيان سياسة </a></li>
                     <li><a href="{{ route('about_us') }}">مكافحة غسل </a></li>
-                    <li><a href="{{ route('companies') }}"> شركائنا </a></li>
+                    <li><a> شركائنا </a></li>
 
                 </ul>
             </li>
