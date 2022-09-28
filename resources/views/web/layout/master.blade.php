@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Save The Children.">
     <title>Save The Childern</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" />
@@ -40,7 +41,7 @@
                     <span></span>
                 </div>
                 <ul class="right-list">
-                    <li class="job"><a href=""><i class="fa-solid fa-user"></i>@lang('content.jobs')</a></li>
+                    <li class="job"><a><i class="fa-solid fa-user"></i>@lang('content.jobs')</a></li>
                     <li><a href="{{ route('contact_page') }}"><i class="fa-solid fa-phone"></i>@lang('content.contact_us')</a>
                     </li>
                 </ul>
@@ -55,7 +56,7 @@
                     <li class="points"><a><i
                                 class="fa-solid fa-location-dot"></i>@lang('content.point_services')</a>
                     </li>
-                    <li><a href=""><i class="fa-solid fa-search"></i></a>
+                    <li><a><i class="fa-solid fa-search"></i></a>
                         @if (app()->getLocale() != 'en')
                             <a rel="alternate" hreflang="en" class="lang"
                                 href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">

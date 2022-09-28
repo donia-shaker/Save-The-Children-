@@ -288,7 +288,7 @@ a {
 
 main {
   position: relative;
-  background-image: url("/images/2.jpg");
+  background-image: url("/images/2.WebP ");
   background-size: cover;
   height: 130vh;
   color: white;

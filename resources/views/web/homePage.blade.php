@@ -81,7 +81,7 @@
                                     <button class="btn">المزيد</button>
                                 </div>
                             </div>
-                                <img src="{{ asset('images/services.png') }}" alt="">
+                                <img src="{{ asset('images/services.WebP ') }}" alt="services">
                         </div>
                         <div class="box shadow myservicesSlides fade">
                             <div class="content">
@@ -98,7 +98,7 @@
                                     <button class="btn">المزيد</button>
                                 </div>
                             </div>
-                            <img src="{{ asset('images/services.png') }}" alt="">
+                            <img src="{{ asset('images/services.WebP ') }}" alt="services">
                         </div>
                         <div class="box shadow myservicesSlides fade">
                             <div class="content">
@@ -115,7 +115,7 @@
                                     <button class="btn">المزيد</button>
                                 </div>
                             </div>
-                            <img src="{{ asset('images/services.png') }}" alt="">
+                            <img src="{{ asset('images/services.WebP ') }}" alt="services">
                         </div>
                         <div class="box shadow myservicesSlides fade">
                             <div class="content">
@@ -132,7 +132,7 @@
                                     <button class="btn">المزيد</button>
                                 </div>
                             </div>
-                            <img src="{{ asset('images/services.png') }}" alt="">
+                            <img src="{{ asset('images/services.WebP ') }}" alt="services">
                         </div>
                         <div class="box shadow myservicesSlides fade">
                             <div class="content">
@@ -149,7 +149,7 @@
                                     <button class="btn">المزيد</button>
                                 </div>
                             </div>
-                            <img src="{{ asset('images/services.png') }}" alt="">
+                            <img src="{{ asset('images/services.WebP ') }}" alt="services">
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div class="design">
-                <img src="{{ asset('images/sasa.png') }}" alt="">
+                <img src="{{ asset('images/sasa.png') }}" alt="layer">
             </div>
         </div>
         </div>
@@ -172,7 +172,7 @@
         <div class="overflow">
             <div class="container">
                 <div class="image">
-                    <img src="{{ asset('images/child.png') }}" alt="">
+                    <img src="{{ asset('images/child.WebP ') }}" alt="layer">
                 </div>
                 <div class="content">
                     <h2 class="h-2"> ساعد الاطفال</h2>
@@ -214,14 +214,14 @@
 
     {{-- Start News Section --}}
     <section class="news">
-        <img src="{{ asset('images/From selection.png') }}" alt="" class="layer1">
+        <img src="{{ asset('images/From selection.WebP') }}" alt="layer" class="layer1">
         <x-news></x-news>
         <div class="button"><button class="btn">المزيد</button></div>
         </div>
         <div class="new-wave"></div>
         <div class="layer2">
-            <img src="{{ asset('images/aa.png') }}" alt="">
-            <img src="{{ asset('images/From selection.png') }}" alt="">
+            <img src="{{ asset('images/aaaa.png') }}" alt="layer">
+            <img src="{{ asset('images/From selection.WebP') }}" alt="layer">
         </div>
     </section>
     {{-- End News Section --}}
@@ -275,7 +275,7 @@
     {{-- Start Location Section --}}
     <section class="location">
         <div class="layer1">
-            <img src="{{ asset('images/From selection.png') }}" alt="">
+            <img src="{{ asset('images/From selection.WebP') }}" alt="layer">
         </div>
         <div class="container">
             <div class="content">
@@ -283,11 +283,11 @@
                 <div class="button"><button class="btn"> المزيد </button></div>
             </div>
             <div class="image">
-                <img src="{{ asset('images/map.PNG') }}" alt="">
+                <img src="{{ asset('images/map.WebP ') }}" alt="map">
             </div>
         </div>
         <div class="layer2">
-            <img src="{{ asset('images/aa.png') }}" alt="">
+            <img src="{{ asset('images/aaaa.png') }}" alt="layer">
         </div>
     </section>
     {{-- End Location Section --}}

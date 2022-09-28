@@ -14,7 +14,7 @@
                         <div class="d-link"><a href="">المزيد</a></div>
                     </div>
                     <span class="animation"></span>
-                    <img src="{{ asset('images/news2.PNG') }}" alt="">
+                    <img src="{{ asset('images/news2.WebP ') }}" alt="">
                     <div class="text">
                         <h3 class=" f-5">مشروع الرعاية الصحية </h3>
                         <div class="link"><a href="">المزيد</a></div>
@@ -32,7 +32,7 @@
                         <div class="d-link"><a href="">المزيد</a></div>
                     </div>
                     <span class="animation"></span>
-                    <img src="{{ asset('images/news.PNG') }}" alt="">
+                    <img src="{{ asset('images/news.WebP ') }}" alt="">
                     <div class="text">
                         <h3 class="f-5"> مشروع تعليم الاطفال  </h3>
                         <div class="link"><a href="">المزيد</a></div>
@@ -49,7 +49,7 @@
                         <div class="d-link"><a href="">المزيد</a></div>
                     </div>
                     <span class="animation"></span>
-                    <img src="{{ asset('images/news2.PNG') }}" alt="">
+                    <img src="{{ asset('images/news2.WebP ') }}" alt="">
                     <div class="text">
                         <h3 class="f-5">مشروع رعاية الاطفال </h3>
                         <div class="link"><a href="">المزيد</a></div>
@@ -69,7 +69,7 @@
                         <div class="d-link"><a href="">المزيد</a></div>
                     </div>
                     <span class="animation"></span>
-                    <img src="{{ asset('images/news.PNG') }}" alt="">
+                    <img src="{{ asset('images/news.WebP ') }}" alt="">
                     <div class="text">
                         <h3 class="f-5">مشروع الغذاء   </h3>
                         <div class="link"><a href="">المزيد</a></div>
@@ -89,7 +89,7 @@
                         <div class="d-link"><a href="">المزيد</a></div>
                     </div>
                     <span class="animation"></span>
-                    <img src="{{ asset('images/news2.PNG') }}" alt="">
+                    <img src="{{ asset('images/news2.WebP ') }}" alt="">
                     <div class="text">
                         <h3 class="f-5">مشروع الغذاء   </h3>
                         <div class="link"><a href="">المزيد</a></div>

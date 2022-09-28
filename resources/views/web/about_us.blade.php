@@ -65,7 +65,7 @@
                             {!! $principle->table_value !!}
                         </div>
                         <div class="images">
-                            <img src="{{ asset('images/news.PNG') }}" alt="">
+                            <img src="{{ asset('images/news.WebP ') }}" alt="">
                         </div>
                     </div>
                 </div>
